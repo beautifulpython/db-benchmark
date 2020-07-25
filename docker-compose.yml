@@ -1,0 +1,32 @@
+version: "3" #版本信息
+services: #服务列表
+  mysql_1:
+    image: mysql:5.7
+    ports:
+      - 3306:3306
+    volumes:
+      - "/root/mysql_server/node1/data:/var/lib/mysql"
+      - "/root/mysql_server/node1/conf.d:/etc/mysql/conf.d"
+    environment:
+      - MYSQL_ROOT_PASSWORD=123456
+    restart: always
+  mysql_2:
+    image: mysql:5.7
+    ports:
+      - 3307:3306
+    volumes:
+      - "/root/mysql_server/node2/data:/var/lib/mysql"
+      - "/root/mysql_server/node2/conf.d:/etc/mysql/conf.d"
+    environment:
+      - MYSQL_ROOT_PASSWORD=123456
+    restart: always
+  mysql_3:
+    image: mysql:5.7
+    ports:
+      - 3308:3306
+    volumes:
+      - "/root/mysql_server/node3/data:/var/lib/mysql"
+      - "/root/mysql_server/node3/conf.d:/etc/mysql/conf.d"
+    environment:
+      - MYSQL_ROOT_PASSWORD=123456
+    restart: always
